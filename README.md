@@ -1,4 +1,4 @@
-This is a sinple Choose Your Own Adventure Game project with a few core features.
+This is a simple Choose Your Own Adventure Game project with a few core features.
 - User login system:
   This is a system that will ask for a username and save user data
 - Core CYOA gameplay:
