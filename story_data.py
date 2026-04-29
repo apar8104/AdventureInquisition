@@ -13,18 +13,18 @@ story = {
     },
     "enter":{
         "text": "you found the treasure!",
-        "ending": True
+        "ending": "Treasure Ending"
     },
     "run":{
         "text": "you are now lost in the forest.",
-        "ending": True
+        "ending": "Lost Ending"
     },
     "swim":{
         "text": "i guess the river was wider than it seemed. you have drowned.",
-        "ending": True
+        "ending": "Drowned Ending"
     },
     "follow":{
         "text": "you have found a village",
-        "ending": True
+        "ending": "Survival Ending"
     },
 }
