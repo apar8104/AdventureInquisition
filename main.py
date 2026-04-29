@@ -30,7 +30,6 @@ def load_data():
 
 # Data Save Function
 def save_data(data):
-    print("SAVING DATA:", data)  # DEBUG LINE
     with open(SAVE_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
