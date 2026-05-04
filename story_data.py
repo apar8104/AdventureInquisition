@@ -1,30 +1,136 @@
 story = {
     "start":{
-        "text": "you wake up in  dark forest.",
-        "choices": [("go left", "left"), ("go right", "right")]
+        "text": """
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠓⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⢠⢤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠒⠒⠲⠎⠀⠀⢹⡃⢀⣀⠀⠑⠃⠀⠈⢀⠔⠒⢢⠀⠀⠀⡖⠉⠉⠉⠒⢤⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠚⠙⠒⠒⠒⠤⡎⠀⠀⠀⠀⢀⣠⣴⣦⠀⠈⠘⣦⠑⠢⡀⠀⢰⠁⠀⠀⠀⠑⠰⠋⠁⠀⠀⠀⠀⠀⠈⢦⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠁⠀⠀⠀⠀⠀⠀⢰⠃⠀⣀⣀⡠⣞⣉⡀⡜⡟⣷⢟⠟⡀⣀⡸⠀⡎⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⣻⠀⠀⠀⠀
+⢰⠂⠀⠀⠀⠀⠀⠀⠀⣗⠀⠀⢀⣀⣀⣀⣀⣀⣓⡞⢽⡚⣑⣛⡇⢸⣷⠓⢻⣟⡿⠻⣝⢢⠀⢇⣀⡀⠀⠀⠀⢈⠗⠒⢶⣶⣶⡾⠋⠉⠀⠀⠀⠀⠀
+⠈⠉⠀⠀⠀⠀⠀⢀⠀⠈⠒⠊⠻⣷⣿⣚⡽⠃⠉⠀⠀⠙⠿⣌⠳⣼⡇⠀⣸⣟⡑⢄⠘⢸⢀⣾⠾⠥⣀⠤⠖⠁⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⢀⠀⠀
+⠀⠀⠀⢰⢆⠀⢀⠏⡇⠀⡀⠀⠀⠀⣿⠉⠀⠀⠀⠀⠀⠀⠀⠈⢧⣸⡇⢐⡟⠀⠙⢎⢣⣿⣾⡷⠊⠉⠙⠢⠀⠀⠀⠀⠀⢸⡇⢀⠀⠀⠀⠀⠈⠣⡀
+⠀⠀⠀⠘⡌⢣⣸⠀⣧⢺⢃⡤⢶⠆⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣟⠋⢀⠔⣒⣚⡋⠉⣡⠔⠋⠉⢰⡤⣇⠀⠀⠀⠀⢸⡇⡇⠀⠀⠀⠀⠀⠀⠸
+⠀⠀⠀⠀⠑⢄⢹⡆⠁⠛⣁⠔⠁⠀⣿⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⣿⢠⡷⠋⠁⠀⠈⣿⡇⠀⠀⠀⠈⡇⠉⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠑⣦⡔⠋⠁⠀⠀⠀⣿⠀⠀⢠⡀⢰⣼⡇⠀⡀⠀⠀⣿⠀⠁⠀⠀⠀⠀⣿⣷⠀⠀⠀⠀⡇⠀⠀⢴⣤⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣿⡇⠀⠀⠀⠀⠀⣿⡀⠀⢨⣧⡿⠋⠀⠘⠛⠀⠀⣿⠀⠀⢀⠀⠀⠀⣿⣿⠀⠀⠀⠀⢲⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⢸⡧⡄⠀⠹⣇⡆⠀⠀⠀⠀⠀⣿⠀⢰⣏⠀⣿⣸⣿⣿⠀⠀⠀⠀⣼⠀⠀⠰⠗⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⢸⡇⣷⣛⣦⣿⢀⠈⠑⠀⢠⡆⣿⠐⢠⣟⠁⢸⠸⣿⣿⢱⣤⢀⠀⣼⠀⠀⢀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⢀⠀⠀⠀⢸⡇⠘⠫⣟⡇⠊⣣⠘⠛⣾⡆⢿⠀⠙⣿⢀⣘⡃⣿⣿⡏⠉⠒⠂⡿⠀⠰⣾⡄⠀⢸⡟⣽⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠸⣿⡇⠀⠘⣾⠀⠀⢸⡇⢸⣇⡙⠣⠀⣹⣇⠀⠈⠧⢀⣀⣀⡏⣸⣿⣇⢹⣿⡇⢴⣴⣄⣀⡀⢰⣿⡇⠀⢸⣇⢿⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠓⠁⠈⠻⢷⠾⠦⠤⠬⣅⣹⣿⣖⣶⣲⣈⡥⠤⠶⡖⠛⠒⠛⠁⠉⠛⠮⠐⢛⡓⠒⢛⠚⠒⠒⠒⠛⣚⣫⡼⠿⠿⣯⠛⠤⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⡉⠉⠁⠀⠀⠘⠓⠀⠀⠀⠀⠀⣀⣞⡿⡉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣶⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n\nyou wake up on cold, damp ground. towering trees stretch endlessly above you, their branches concealing the sky. \na faint mist clings to the forest floor, and the air is unnaturally quiet.\n\nyou don’t remember how you got here.\n\nahead, the path splits in two.""",
+        "choices": [("take the darker path", "left"), ("follow the faint light", "right")]
     },
     "left":{
-        "text": "you find a cave.",
-        "choices": [("enter the cave", "enter"), ("run away", "run")]
+        "text": """
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣷⣄⠙⠛⠛⠿⠿⠿⠟⢁⡄⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⠘⠛⠿⢿⣿⠿⠻⣿⣿⣿⣿⣶⣶⣶⣦⣴⣿⣷⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣷⣶⣤⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀
+⠀⠀⠀⠀⠐⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢋⣀⠈⢿⣿⡟⢻⣿⣿⠀
+⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⣠⣤⣼⣿⣿⠀
+⠀⠀⠀⢀⣠⣤⠈⠿⠿⠟⢋⣠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠐⣿⣿⣿⣷⣶⣤⣶⣿⣿⣿⣿⣿⣿⠟⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠈⠙⠻⠿⠿⠿⣿⡿⣿⣿⣿⠀
+⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⠛⠀⠀⠀⠀⠀⠀⢤⣶⣦⣀⣤⣿⣿⣿⠀
+⠀⣠⣾⣿⡿⠿⠿⠿⠛⠋⠙⠋⠀⠸⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⣿⣿⣿⣿⣶⣶⣶⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⢋⣡⠀
+⠀⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠛⠛⠛⠛⠛⠛⠀\n\nyou push through thick undergrowth, the forest growing darker with every step. the silence is heavy here.\n\neventually, you stumble upon a cave entrance carved into a jagged rock face. there seems to be a soft, whispering voice beckoning you in.""",
+        "choices": [("enter the cave", "enter"), ("turn back and run to the forest", "run")]
     },
     "right":{
-        "text": "you reach a river",
-        "choices": [("swim across", "swim"), ("follow the river", "follow")]
+        "text": """
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣀⣤⣴⣶⣶⣶⣦⣤⣀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⡀⠀⠀
+⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀
+⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⣿⣿⠿⠿⠿⠿⠟⠛⠛⠛⠀⠛⠛⠛⠛⠛⠛⠛⠻⠿⠿⠿⠿⠿⠿⠿⠿⠿⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⣤⣶⣶⣶⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣶⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣀⣀⣀⣤⣤⣤⣽⣿⣿⣿⣿⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣤⣶⣿⣿⣿⣿⣿⣿⣿⡿⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠙⠛⠿⢿⣯⣭⣝⡛⠻⢿⣿⣿⣷⣶⣶⣦⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠿⢶⣾⣿⣿⣿⣿⣿⣿⣿⡿⣿⣷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣾⣿⣿⢿⣿⣿⢟⣡⣼⣿⠟⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⠟⣡⣾⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣿⣿⠹⣿⣿⣄⠻⣿⣿⣿⠻⣿⣿⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠘⠛⠛⠓⠈⠛⠛⠛⠊⠛⠛⠓⠀⠙⠛⠛⠛⠛⠓⠒⠀⠀⠀⠀\n\nyou follow the soft glow filtering through the trees until you hear the sound of rushing water.\n\na wide river cuts through the forest, its current stronger than it first appears. the water reflects the sky like a mirror—but something about it feels off.""",
+        "choices": [("attempt to swim across", "swim"), ("walk along the riverbank", "follow")]
     },
     "enter":{
-        "text": "you found the treasure!",
+        "text": """
+        ⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⣾⣿⠿⢋⣡⣴⣶⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣾⣿⡟⢁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠆⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⣾⣿⠏⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢁⣴⣾⣿⠟⠋⣀⣤⣤⡀⠀⠀
+⠀⣼⣿⡟⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⣴⣿⣿⠟⢁⣴⣿⣿⣿⣿⣿⡄⠀
+⠀⣉⠛⠃⠸⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣾⣿⡿⠁⣰⣿⣿⣿⣿⣿⣿⣿⡧⠀
+⠀⣿⣿⡆⢠⣤⠀⣉⠙⠛⠿⢿⣿⣿⠀⣾⣿⣿⠃⣼⣿⣿⣿⣿⠿⠛⢉⣡⣤⠀
+⠀⣿⣿⡇⢸⣿⠀⣿⠿⠷⣶⠀⣈⡁⠀⠻⠿⡟⠀⠿⠟⠋⣁⣠⣴⣾⣿⣿⣿⠀
+⠀⣿⣿⡇⢸⣿⠀⣿⡄⢠⣿⠀⣿⡇⠀⣶⣦⡄⠀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⣿⣿⡇⢸⣿⠀⠿⢧⣾⣿⠀⣿⡇⠀⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⣿⣿⡇⢸⣿⣷⣶⣤⣄⣉⠀⣿⡇⠀⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠉⠛⠃⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠉⠙⠛⠿⣿⣿⣿⡇⠀⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⠿⠛⠉⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠻⢿⡇⠀⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n\nyou step cautiously into the cave. the air is warm, and the whispers grow louder with every step.\nyou notice stange glow eminating from deep in the cave. sensing it is the source of the voices, you draw closer. \n\nthe tunnel opens into a hidden chamber filled with gold, jewels, and ancient artifacts beyond imagination.\n\nyou’ve found something long forgotten… and claimed it.""",
         "ending": "Treasure Ending"
     },
     "run":{
-        "text": "you are now lost in the forest.",
+        "text": """
+        ⣤⣿⠗⣯⠇⣰⠁⠀⠀⢀⡼⠉⡲⡀⠀⠈⢳⢦⣈⣷⣴⠏⠢⡈⢳⢸⠀⠀⡠⠋⢳⣄⡀⠀⢄⡄⠘⣿⡄⠀⠘⠀⣇⣿⡐⠁⡀⠀⠁⠀⠑⢬⣿⡉⡿⢄⣿⢇⡱⢝⡄⠈⣿⡇⠑
+        ⢿⡟⠉⠘⢠⠃⢀⢁⢠⢊⠄⠊⢀⠍⠣⣤⢃⠀⠉⢻⣿⠀⠀⠐⠘⣿⣠⠞⠀⢠⠁⠹⡍⠢⢜⡙⡄⣿⡧⡀⠀⣿⣞⠸⢣⡀⠇⡄⠀⠀⠀⠀⣟⢸⣧⠊⢉⠺⣆⠀⢇⠁⣼⡇⠀
+        ⠀⠋⢂⣰⣃⡴⡞⣩⠫⡥⠒⠈⠈⣇⢠⢋⠳⣤⡀⠀⣿⡄⠀⠀⠠⣿⠁⠎⢠⠁⡀⠀⠙⣦⡀⠱⠈⢻⡇⢱⣔⡿⢀⡷⡏⢿⣸⠀⠀⠀⢄⢀⢻⢡⣩⣶⠁⠀⠈⠑⢾⣾⢹⣿⡀
+        ⠱⣤⠞⡏⡅⠱⡞⢀⠀⢡⡀⠇⠀⢉⣯⠃⢠⠁⠙⢳⣿⣷⡀⠀⢸⣿⠢⣰⠃⡄⡇⢄⠈⡘⡙⣦⡴⢸⣿⢎⣸⠁⠀⣟⢣⢏⣻⡄⠀⠀⠘⡼⢸⠟⠔⢈⢆⠀⠀⠀⠈⣿⠀⢿⡇
+        ⠋⠈⢳⣧⠇⣸⠵⠀⠈⠢⠵⣀⣠⢯⠉⢦⡀⡸⠀⠀⠘⢿⣷⠡⣸⡿⡦⠊⢲⢇⠣⠀⠀⠱⠱⣹⠻⣦⣿⡼⠻⡑⡜⢸⠇⠈⡟⣇⠐⠀⠀⡁⣹⠎⠀⠀⡈⢦⠤⠐⠉⠺⡇⣿⣿
+        ⠀⠀⠀⣿⣳⠃⠀⠣⡀⠐⣀⣸⢁⡟⡀⠠⢿⣀⠀⢠⠐⠌⢿⣷⣾⣳⡗⢤⣎⡌⢙⠦⡀⠀⠀⠙⢆⠘⣿⠇⠀⢳⡉⢾⠀⣸⠚⡘⣾⢆⡜⢀⣿⢀⠀⡠⠔⠉⣧⠀⠀⠀⣹⣇⣿
+        ⠀⠀⠀⣿⠷⡀⠀⠀⠙⢄⡶⢹⢣⠻⡜⠀⠇⡹⡄⡀⠀⠰⣼⣿⡿⠉⢳⡂⠏⡨⠙⢲⠺⠦⣢⠀⢄⢳⣿⢄⡔⠃⢣⢸⡜⠙⠀⢰⢙⣿⣴⢻⣧⠷⠊⠀⣴⡠⠈⢣⡀⡼⠫⣿⡇
+        ⠀⠀⠀⣿⡄⢱⠀⡈⢀⡞⢿⢇⣾⠿⡈⣦⣰⢁⢿⢦⣀⢖⠫⣿⣧⠃⣼⡜⣴⡀⡠⠁⠀⠀⠈⠧⡀⣞⣿⠏⢆⣠⡈⣿⢱⣄⠴⣫⣿⣻⣬⣾⠉⣱⠀⠀⠜⢆⠀⢀⡝⢧⡑⢻⣗
+        ⡄⠀⢡⡟⡐⢇⢣⣸⡟⠀⢸⡼⡁⢀⣿⣾⣹⡎⣸⣮⢿⣌⡼⣿⣇⡸⠚⣇⠇⣱⡁⢀⠀⢀⡜⠠⠻⣿⣿⠺⡄⣿⠠⣸⢻⡽⢾⢿⠋⢫⣷⣿⢀⠎⡑⣀⠀⠈⣦⠛⢼⠀⠙⢻⣿
+        ⠡⣠⢺⡇⡇⣠⠿⢧⠱⠀⢸⡡⢟⣡⢇⠓⣻⡷⠛⡇⠀⣿⢷⣿⡿⠁⣸⡏⠃⣀⢱⡊⢀⢺⡸⡅⠧⢺⣿⢦⣰⣄⣥⢾⣯⡽⢋⢻⣜⡀⡇⣿⠎⠀⠸⣜⣠⡾⡋⢣⡸⡡⣠⠂⢹
+        ⣶⢹⣼⣷⡟⠁⡆⢻⣶⣣⣿⢣⡼⣥⠁⣆⠺⡇⠀⢃⢼⢧⡽⣿⣇⠔⢸⡝⣺⣼⠛⡱⢃⣜⠤⢚⡄⢸⣇⣽⣿⢿⡀⣹⣫⠏⢺⡾⠈⠳⣇⢿⡇⣘⢞⣿⡿⣦⡰⠘⠉⢷⣵⡴⠉
+        ⠻⣿⣿⣿⡐⠉⠏⢢⣽⣛⣿⡊⠱⣎⠶⣹⡀⢹⡰⠻⣮⣿⠣⣸⣿⣢⣾⡴⠉⡘⡰⣹⢟⠉⠆⠈⡌⣾⡿⠁⠘⠄⢳⣿⠳⡠⡎⢡⡇⢠⣿⣼⣷⣻⡿⠫⠀⠈⠎⢦⡆⡸⣾⠣⣤
+        ⢇⢻⣿⡷⢳⠈⠀⢀⡿⣿⡧⠊⡶⣽⡄⠀⣱⢾⣗⣽⡽⡿⠉⢹⣿⢷⣿⠀⠀⣷⠻⢀⠌⢧⡦⠞⠑⣿⡇⠐⢤⠈⣺⡿⡎⢸⡀⠃⡷⠁⣿⠀⣿⣿⡁⠀⠱⡀⢘⣤⡟⢡⡯⢾⠉
+        ⢸⢠⣿⣿⣅⣹⡖⠉⢀⣿⡟⣀⡕⢀⣬⡿⣵⠙⣿⣿⡀⠰⠰⠹⣿⡞⣿⡀⠇⣯⡆⣱⣜⠊⣇⠀⠀⣿⡗⡮⣼⣲⢿⣷⡷⠂⢡⠞⣧⠞⣸⣏⣿⡟⠀⠁⢢⡾⠫⡖⢹⣴⠏⢂⢡\n\nyou turn away from the cave, your instincts screaming at you to leave.\n\nbut as you retrace your steps, the forest no longer looks familiar. the trees shift, the paths twist, and the mist thickens.\n\nno matter where you go… you can’t find your way out.""",
         "ending": "Lost Ending"
     },
     "swim":{
-        "text": "i guess the river was wider than it seemed. you have drowned.",
+        "text": """
+        
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢻⣿⢿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠶⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠻⣠⡿⠿⠛⠻⢿⣿⡇⠀⠀⠀⠀⢿⣄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣏⠀⠀⠀⠀⣸⡿⢷⣦⣤⣤⣴⣿⠟⠀⠀⢀⣴⣶⡄⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣤⣤⣴⣿⣿⡅⡄⢹⣿⡿⠛⠋⠀⠀⢀⣼⣿⣿⣿⡧⠀
+⠀⠀⠀⠀⢀⡀⠀⠀⠈⠛⠟⠛⢻⣿⣿⣿⣿⣿⡿⠀⢀⣤⣶⣿⡿⠛⠋⠉⠀⠀
+⠀⠀⠀⠀⣿⣿⣦⣤⣤⣄⣀⣀⡈⢛⠛⠛⠛⠁⣠⣾⡿⠛⠉⠀⠀⠀⠀⠀⣀⠀
+⠀⠀⠀⢼⣿⣿⣿⠿⠿⠿⠿⠿⢿⢿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣾⣿⣏
+⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⠿⠋⠁⠉⠉⠉⠉⠉⠙⠛⠛⠻⠿⠿⣿\n\nyou step into the river. the water is far colder than you imagined.\n\nhalfway across, the current suddenly pulls stronger. your limbs grow heavy with effort, your breath short.\n\nthe water's surface slips away above you as the darkness below takes hold.""",
         "ending": "Drowned Ending"
     },
     "follow":{
-        "text": "you have found a village",
+        "text": """
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣴⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠠⠴⠿⠿⠿⠿⠿⠦⠀⠀⢀⣤⡀⠀⠀⠀⠀⠀⠀⣠⣶⣷⣤⡀⠀⠀⠀⠀
+⠀⠀⠀⢰⡶⢶⣶⣶⡶⠂⣀⣴⣿⣿⣿⣦⣀⠀⠀⠤⠾⠿⠿⠿⠿⠿⠦⠀⠀⠀
+⠀⠀⠀⢸⣷⣾⠟⠋⣠⣾⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⢶⡶⢶⣶⣶⣶⡆⠀⠀⠀
+⠀⠀⠀⠈⠉⠁⠀⠈⠉⡉⠉⣉⣉⣉⣉⣉⣉⣉⡉⠁⣀⣁⣾⣿⣿⠀⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣦⡈⠻⢿⡏⠀⠈⣿⡇⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣦⣄⠙⢿⣿⡿⠃⣠⣾⣿⣿⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡈⠰⣾⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀
+⠀⠀⠤⠾⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠦⠈⠉⠉⣉⣉⣉⣉⣉⡉⠉⠀⠀
+⠀⠀⠀⠀⣴⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡆⢰⣶⣶⣶⠿⠿⠿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⣿⣿⠉⠉⠉⣿⣿⡿⠿⠿⢿⣿⡇⢸⣿⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⣿⣿⣀⣀⣀⣿⣿⡇⠀⠀⢸⣿⡇⠸⠿⠿⠿⠀⠀⠀⠿⠿⠇⠀⠀⠀
+⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n\nyou follow the river, keeping a cautious distance from the water.\n\nafter what feels like hours, the trees begin to thin and you spot rising smoke in the distance.\n\na small village appears ahead. townspeople notice you, rushing over to help.\n\nyou made it out alive.""",
         "ending": "Survival Ending"
     },
 }

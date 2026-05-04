@@ -4,6 +4,7 @@ import os
 
 SAVE_FILE = "save.json"
 
+# All possible endings in game
 ALL_ENDINGS = [
     "Treasure Ending",
     "Lost Ending",
@@ -15,9 +16,10 @@ GREEN = "\033[92m"
 RED = "\033[91m"
 RESET = "\033[0m"
 
+# Introductory message
 print(" Welcome to Adventure Aquisition, a choose your own adventure story game.\n Please type the corresponsing number to make your choices.\n Press 0 to EXIT at any time \n Press 9 to RESTART at anytime\n Enjoy!")
 
-# Data Load Function
+# Data load function (loads saved user data, returns empty if no data, prevents crashing if data corrupted)
 def load_data():
     if not os.path.exists(SAVE_FILE):
         return {}
@@ -28,11 +30,12 @@ def load_data():
         except json.JSONDecodeError:
             return {}
 
-# Data Save Function
+# Data save function
 def save_data(data):
     with open(SAVE_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
+# Achievement display
 def show_endings(unlocked):
     print("\n=== ENDINGS ACHIEVEMENTS ===\n")
 
@@ -44,7 +47,7 @@ def show_endings(unlocked):
 
     print("\n===========================\n")
 
-# Core Gameplay
+# Core gameplay
 def play_game(username, data):
     current = "start"
 
@@ -56,7 +59,7 @@ def play_game(username, data):
 
         print("\n" + node["text"])
 
-        # Ending Gameplay Mode
+        # Ending gameplay mode
         if "ending" in node:
             ending = node["ending"]
 
@@ -82,7 +85,7 @@ def play_game(username, data):
             else:
                 continue
 
-        # Choice Gameplay Mode
+        # Choice gameplay mode
         for i, choice in enumerate(node["choices"], 1):
             print(f"{i} - {choice[0]}")
 

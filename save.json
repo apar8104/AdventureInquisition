@@ -1,10 +1,20 @@
 {
     "maya": [
         "Treasure Ending",
-        "Lost Ending"
+        "Lost Ending",
+        "Drowned Ending"
     ],
     "test": [
         "Lost Ending",
         "Treasure Ending"
+    ],
+    "david": [
+        "Survival Ending"
+    ],
+    "test1": [
+        "Treasure Ending",
+        "Drowned Ending",
+        "Lost Ending",
+        "Survival Ending"
     ]
 }
